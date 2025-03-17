@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS livro (
     qtd_paginas INTEGER NOT NULL,
     estoque INTEGER NOT NULL DEFAULT 0
 );
-CREATE TABLE IF NOT EXISTS livro_Autor (
+CREATE TABLE IF NOT EXISTS livro_autor (
     livro_id INTEGER NOT NULL,
     autor_id INTEGER NOT NULL,
     PRIMARY KEY (livro_id, autor_id),
