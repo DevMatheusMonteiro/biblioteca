@@ -1,0 +1,20 @@
+[
+  {
+    "id":3,
+    "titulo":"O Homem do Castelo Alto",
+    "isbn":"9780544817289",
+    "genero":"Fic\u00e7\u00e3o Cient\u00edfica",
+    "data_publicacao":"1962-02-02",
+    "qtd_paginas":288,
+    "estoque":1
+  },
+  {
+    "id":1,
+    "titulo":"Ubik",
+    "isbn":"9781857988536",
+    "genero":"Fic\u00e7\u00e3o Cient\u00edfica",
+    "data_publicacao":"1969-03-05",
+    "qtd_paginas":240,
+    "estoque":1
+  }
+]

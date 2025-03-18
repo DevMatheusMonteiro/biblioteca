@@ -1,0 +1,24 @@
+[
+  {
+    "data_emprestimo":"2025-05-12",
+    "data_devolucao":null,
+    "livro_id":5,
+    "livro_alugado":"Piquenique na Estrada",
+    "livro_isbn":"9781388329471",
+    "livro_genero":"Fic\u00e7\u00e3o Cient\u00edfica",
+    "livro_data_publicacao":"1972-01-01",
+    "livro_qtd_paginas":224,
+    "livro_estoque":1
+  },
+  {
+    "data_emprestimo":"2025-05-02",
+    "data_devolucao":null,
+    "livro_id":3,
+    "livro_alugado":"O Homem do Castelo Alto",
+    "livro_isbn":"9780544817289",
+    "livro_genero":"Fic\u00e7\u00e3o Cient\u00edfica",
+    "livro_data_publicacao":"1962-02-02",
+    "livro_qtd_paginas":288,
+    "livro_estoque":1
+  }
+]
