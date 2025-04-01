@@ -16,7 +16,7 @@ def escrever_json(df, arquivo):
 def inserir_dados(df, tabela):
     try:
         conn = db.conectar()
-        df.to_sql(tabela, conn, if_exists="append", index=False)
+        df.to_sql(tabela, conn, if_exists="replace", index=False)
     except Exception as e:
         print(f"Erro ao inserir dados: {e}")
     finally:
