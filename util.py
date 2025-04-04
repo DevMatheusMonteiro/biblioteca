@@ -1,5 +1,5 @@
 import pandas as pd
-import database_config as db
+import database_config_sqlite as db
 import os
 
 def ler_csv(arquivo):
