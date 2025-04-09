@@ -8,4 +8,8 @@ Session = orm.sessionmaker(bind=engine)
 session = Session()
 
 def create_tables():
+    from models.autor import Autor
+    from models.emprestimo import Emprestimo
+    from models.livro import Livro
+    from models.usuario import Usuario
     Base.metadata.create_all(engine)
