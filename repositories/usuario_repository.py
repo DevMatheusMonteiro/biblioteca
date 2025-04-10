@@ -4,15 +4,18 @@ from models.emprestimo import Emprestimo
 
 class UsuarioRepository:
     @staticmethod
-    def adicionar(usuario):
+    def criar_usuario(usuario):
         session.add(usuario)
         session.commit()
     @staticmethod
-    def listar_todos():
-        return session.query(Usuario).all()
+    def listar_usuarios():
+        return session.query(Usuario).filter_by(ativo=True).all()
     @staticmethod
-    def buscar_por_id(usuario_id: int):
-        return session.get(Usuario, usuario_id)
+    def buscar_por_id(id):
+        return session.get(Usuario, id)
     @staticmethod
-    def contar_emprestimos_ativos(usuario_id: int):
-        return session.query(Emprestimo).filter_by(usuario_id=usuario_id, data_devolucao=None).count()
+    def contar_emprestimos_ativos(id):
+        return session.query(Emprestimo).filter_by(usuario_id=id, data_devolucao=None).count()
+    @staticmethod
+    def atualizar_usuario():
+        session.commit()
