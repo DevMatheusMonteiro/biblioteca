@@ -36,7 +36,7 @@ class LivroService:
         livro = LivroRepository.buscar_por_id(id)
         livro_por_titulo = LivroRepository.buscar_por_titulo(titulo)
         livro_por_isbn = LivroRepository.buscar_por_isbn(isbn)
-        if (livro_por_titulo and livro_por_isbn.id != livro.id) or (livro_por_isbn and livro_por_isbn.id != livro.id):
+        if (livro_por_titulo and livro_por_titulo.id != livro.id) or (livro_por_isbn and livro_por_isbn.id != livro.id):
             raise AppError("Erro: livro já cadastrado.")
         if data_publicacao_str and data_publicacao_str.strip() != "":
             data_publicacao = datetime.strptime(data_publicacao_str, "%Y-%m-%d")
