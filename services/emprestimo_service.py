@@ -19,10 +19,12 @@ class EmprestimoService:
             raise AppError("Erro: limite de 5 livros emprestados atingido.")
         if livro.estoque == 0:
             raise AppError("Erro: estoque esgotado.")
+        emprestimo_ativo = EmprestimoRepository.buscar_ativo(usuario_id, livro_id)
+        if emprestimo_ativo:
+            raise AppError("Erro: usuário ainda possui um empréstimo ativo deste livro.")
         livro.estoque -= 1
-        LivroRepository.atualizar_livro()
         emprestimo = Emprestimo(usuario_id=usuario_id, livro_id=livro_id)
-        EmprestimoRepository.adicionar(emprestimo)
+        EmprestimoRepository.criar_emprestimo(emprestimo)
     @staticmethod
     def registrar_devolucao(usuario_id, livro_id):
         emprestimo = EmprestimoRepository.buscar_ativo(usuario_id, livro_id)
@@ -31,7 +33,7 @@ class EmprestimoService:
         livro = LivroRepository.buscar_por_id(livro_id)
         livro.estoque += 1
         emprestimo.data_devolucao = datetime.now()
-        EmprestimoRepository.atualizar()
+        EmprestimoRepository.atualizar_emprestimo()
     @staticmethod
     def listar_emprestimos_ativos():
-        return EmprestimoRepository.listar_ativos()
+        return EmprestimoRepository.listar_emprestimos_ativos()

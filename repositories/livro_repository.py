@@ -1,6 +1,5 @@
 from database_config_sqlalchemy import session
 from models.livro import Livro
-from models.emprestimo import Emprestimo
 
 class LivroRepository:
     @staticmethod

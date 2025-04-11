@@ -9,3 +9,6 @@ class Usuario(Base):
     ativo = sql.Column(sql.Boolean, default=True)
 
     emprestimos = orm.relationship("Emprestimo", back_populates="usuario")
+
+    def __str__(self):
+        return f"ID - {self.id} | Nome Completo - {self.nome_completo} | Data de Nascimento - {self.data_nascimento}"

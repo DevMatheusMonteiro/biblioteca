@@ -12,5 +12,8 @@ class Livro(Base):
     qtd_paginas = sql.Column(sql.Integer, nullable=False)
     estoque = sql.Column(sql.Integer, nullable=False)
 
-    autores = orm.relationship("Autor", secondary=livro_autor, back_populates="livro")
+    autores = orm.relationship("Autor", secondary=livro_autor, back_populates="livros")
     emprestimos = orm.relationship("Emprestimo", back_populates="livro")
+
+    def __str__(self):
+        return f"ID - {self.id} | Título - {self.titulo} | ISBN - {self.genero} | Data de Publicação - {self.data_publicacao} | Quantidade de Páginas - {self.qtd_paginas} | Estoque - {self.estoque}"

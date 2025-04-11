@@ -10,3 +10,6 @@ class Emprestimo(Base):
 
     usuario = orm.relationship("Usuario", back_populates="emprestimos")
     livro = orm.relationship("Livro", back_populates="emprestimos")
+
+    def __str__(self):
+        return f"Data de Empréstimo - {self.data_emprestimo} | Data de Devolução - {self.data_devolucao if self.data_devolucao != None else "ainda não devolvido"} | Usuário: {self.usuario.__str__()} | Livro: {self.livro.__str__()}"
