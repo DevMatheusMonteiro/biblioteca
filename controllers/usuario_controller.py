@@ -37,3 +37,11 @@ class UsuarioController():
             return e.message
         except Exception as e:
             return f"Um erro inesperado ocorreu: {e}."
+    @staticmethod
+    def listar_emprestimos_ativos(id):
+        try:
+            return UsuarioService.listar_emprestimos_ativos(id)
+        except AppError as e:
+            return e.message
+        except Exception as e:
+            return f"Um erro inesperado ocorreu: {e}."

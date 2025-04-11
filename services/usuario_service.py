@@ -30,3 +30,6 @@ class UsuarioService:
             raise AppError("Erro: usuário não encontrado.")
         usuario.ativo = False
         UsuarioRepository.atualizar_usuario()
+    @staticmethod
+    def listar_emprestimos_ativos(id):
+        return UsuarioRepository.listar_emprestimos_ativos(id)

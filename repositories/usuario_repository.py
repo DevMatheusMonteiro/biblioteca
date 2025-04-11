@@ -17,5 +17,8 @@ class UsuarioRepository:
     def contar_emprestimos_ativos(id):
         return session.query(Emprestimo).filter_by(usuario_id=id, data_devolucao=None).count()
     @staticmethod
+    def listar_emprestimos_ativos(id):
+        return session.query(Emprestimo).filter_by(usuario_id=id, data_devolucao=None).all()
+    @staticmethod
     def atualizar_usuario():
         session.commit()
