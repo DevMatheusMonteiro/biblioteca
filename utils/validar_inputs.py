@@ -19,4 +19,4 @@ def entrar_data(mensagem):
             data = datetime.strptime(input(mensagem), "%Y-%m-%d")
             return data
         except ValueError:
-            print("Erro: número inválido.")
+            print("Erro: data inválida.")

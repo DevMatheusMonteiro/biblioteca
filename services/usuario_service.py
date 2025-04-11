@@ -6,7 +6,7 @@ from app_error import AppError
 class UsuarioService:
     @staticmethod
     def criar_usuario(nome_completo, data_nascimento):
-        if nome_completo == None or nome_completo.strip():
+        if nome_completo == None or nome_completo.strip() == "":
             raise AppError("Erro: nome nulo ou vazio.")
         if data_nascimento == None:
             raise AppError("Erro: data de nascimento nula.")

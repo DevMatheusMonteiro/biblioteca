@@ -20,12 +20,15 @@ class MenuUsuario():
             print(res)
     @staticmethod
     def listar_emprestimos_ativos():
-        print("====== LISTAR USUÁRIOS ======")
+        print("====== LISTAR EMPRÉSTIMOS ATIVOS ======")
         id = inpt.entrar_numero_inteiro("ID do usuário: ")
         res = UsuarioController.listar_emprestimos_ativos(id)
         if type(res) == list:
-            for emprestimo in res:
-                print(emprestimo.__str__())
+            if res:
+                for emprestimo in res:
+                    print(emprestimo.__str__())
+            else:
+                print("Usuário sem empréstimos ativos.")
         else:
             print(res)
     @staticmethod
